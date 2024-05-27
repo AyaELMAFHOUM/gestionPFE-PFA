@@ -11,8 +11,8 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker-compose build'
-        sh 'start docker-compose up -d'
+        bat 'docker-compose build'
+        bat 'start docker-compose up -d'
       }
     }
 
@@ -26,7 +26,7 @@ pipeline {
 
     stage('Cleanup') {
       steps {
-        sh 'docker-compose down'
+        bat 'docker-compose down'
       }
     }
   }
